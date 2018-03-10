@@ -2,5 +2,5 @@
 
 ## How to use
 
-`pip install --require requirements.txt`
-`python app.py`
+1. `pip install --require requirements.txt`
+2. `python app.py`
