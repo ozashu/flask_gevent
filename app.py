@@ -4,6 +4,7 @@ from flask import Flask, request, render_template, json
 
 from gevent.queue import Queue
 from gevent.pywsgi import WSGIServer
+from geventwebsocket.handler import WebSocketHandler
 
 app = Flask(__name__)
 app.debug = True
@@ -58,7 +59,7 @@ def join(room, uid):
 
         active_room = rooms[room]
         active_room.subscribe(user)
-        pritn('subscribe', active_room, user)
+        print('subscribe', active_room, user)
 
         messages = active_room.backlog()
 
@@ -84,6 +85,6 @@ def poll(uid):
     return json.dumps(msg)
 
 if __name__ == "__main__":
-    http = WSGIServer(('', 5000), app)
+    http = WSGIServer(('', 5000), app, handler_class=WebSocketHandler)
     http.serve_forever()
 
