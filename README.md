@@ -1,4 +1,4 @@
-## Chat server written with Flask and Gevent.
+# Chat server written with Flask and Gevent.
 
 ## How to use
 
