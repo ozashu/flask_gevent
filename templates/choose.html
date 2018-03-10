@@ -1,0 +1,17 @@
+<title>Main</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+    $("#choose").submit(function(e) {
+      document.location = $("#uid").val();
+      e.preventDefault();
+    });
+  });
+</script>
+
+<h2>Choose Name:</h2>
+<form id="choose" action"/" method="GET">
+<input id="uid"></input>
+<input type="submit" />
+</form>
